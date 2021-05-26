@@ -20,13 +20,15 @@ int main()
 
 		// Запрос размеров массива у пользователя
 		cout << endl << "Please input the number of rows and columns of the array: ";
-		cout << "\n>> ";
-		cin >> N >> K;
-		while (safeInput()) {
-			cout << "Please enter integer values: ";
+		do {
 			cout << "\n>> ";
 			cin >> N >> K;
-		}
+			while (safeInput()) {
+				cout << "Please enter integer values: ";
+				cout << "\n>> ";
+				cin >> N >> K;
+			}
+		} while (N <= 0 || K <= 0);
 
 
 		// Создание массива
