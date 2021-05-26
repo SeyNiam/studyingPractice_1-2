@@ -76,19 +76,25 @@ int main()
 
 
 		// Вывод максимального элемента в каждой диагонали, параллельной главной, на экран и запись в файл
-		cout << endl;
-		MyFile.open("test.txt", std::ios::app); // std::ios::app - это значение "добавления" в открытом режиме. Новые данные будут записаны в конец файла
-		if (MyFile.is_open()) {
-			for (int k = 1; k < DIO; k++) {
-				cout << k << ": " << max[k] << "\n";
-				MyFile << k << ": " << max[k] << "\n";
+		if (N != 1 && K != 1) {
+			cout << endl;
+			MyFile.open("test.txt", std::ios::app); // std::ios::app - это значение "добавления" в открытом режиме. Новые данные будут записаны в конец файла
+			if (MyFile.is_open()) {
+				for (int k = 1; k < DIO; k++) {
+					cout << k << ": " << max[k] << "\n";
+					MyFile << k << ": " << max[k] << "\n";
+				}
+				MyFile << endl << endl;
 			}
-			MyFile << endl << endl;
+			else {
+				cout << "Something went wrong";
+			}
+			MyFile.close();
 		}
-		else {
-			cout << "Something went wrong";
+		else { // Если массив состоит только из одного элемента, то нет никаких диагоналей, кроме гравной
+			cout << endl << "There are no diagonals parallel to the main.";
 		}
-		MyFile.close();
+		
 
 
 		// Освобождение выделенной массивам памяти
