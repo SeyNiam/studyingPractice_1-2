@@ -1,8 +1,9 @@
 ﻿/* Найти в двумерном массиве максимальный элемент в каждой диагонали, параллельной главной. */
 #include <iostream>
 #include <fstream> // Общий файловый поток с возможностями как ofstream, так и ifstream, которые позволяют ему создавать, читать и записывать информацию в файлы
-#include <cstdlib> // содержит srand() и rand()
-#include <ctime> // содержит time()
+#include <cstdlib> // Содержит srand() и rand()
+#include <ctime> // Содержит time()
+#include <limits.h> // Содержит определения характеристик общих типов переменных
 
 using namespace std;
 
@@ -67,7 +68,7 @@ int main()
 		max = new int[DIO]; 
 		// Присвоение каждому элементу массива минимально возможного значения int
 		for (int i = 0; i < DIO; i++) {
-			max[i] = -2147483648;
+			max[i] = INT_MIN;
 		} 
 
 
