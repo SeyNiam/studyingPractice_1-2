@@ -119,7 +119,7 @@ int main()
 		switch (endFlag) {
 		case 1: endFlag = 1; break;
 		case 2: endFlag = 0; break;
-		default: printf("Incorrect answer. The program will be closed."); endFlag = 0; break;
+		default: cout << "Incorrect answer. The program will be closed."; endFlag = 0; break;
 		}
 
 	} while (endFlag); // Если флаг равен 0, то выход из цикла 
